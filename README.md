@@ -1,59 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 Aplikasi Apotek - Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi manajemen apotek lengkap dengan fitur CRUD obat, transaksi, laporan, dan REST API.
 
-## About Laravel
+## ✨ Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 📊 Manajemen Obat
+- ✅ CRUD data obat lengkap
+- ✅ Manajemen stok otomatis
+- ✅ Status stok (Aman/Hati-hati/Kritis)
+- ✅ Export data ke PDF
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 💰 Transaksi Penjualan
+- ✅ Transaksi real-time
+- ✅ Cetak struk otomatis
+- ✅ Perhitungan otomatis
+- ✅ Update stok otomatis
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 📈 Laporan
+- ✅ Laporan stok obat
+- ✅ Laporan penjualan
+- ✅ Analisis penjualan
+- ✅ Export PDF
 
-## Learning Laravel
+### 🗺️ Manajemen Distributor
+- ✅ CRUD distributor
+- ✅ Maps lokasi distributor
+- ✅ Koordinat GPS
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 📱 REST API
+- ✅ API untuk mobile app
+- ✅ Pemesanan obat via API
+- ✅ Cek stok via API
+- ✅ Dokumentasi API lengkap
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Teknologi
 
-## Laravel Sponsors
+- **Backend:** Laravel 9/10
+- **Frontend:** Bootstrap 5, jQuery
+- **Database:** MySQL
+- **PDF:** DomPDF
+- **Maps:** Leaflet.js
+- **API:** RESTful JSON
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Instalasi
 
-### Premium Partners
+### Prerequisites
+- PHP 8.0+
+- Composer
+- MySQL
+- Node.js (opsional)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Langkah Instalasi
+```bash
+# 1. Clone repository
+git clone https://github.com/username/apotek-app.git
+cd apotek-app
 
-## Contributing
+# 2. Install dependencies
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 3. Setup environment
+cp .env.example .env
+php artisan key:generate
 
-## Code of Conduct
+# 4. Konfigurasi database di .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=apotek_db
+DB_USERNAME=root
+DB_PASSWORD=
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 5. Migrasi database
+php artisan migrate --seed
 
-## Security Vulnerabilities
+# 6. Install DomPDF
+composer require barryvdh/laravel-dompdf
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 7. Jalankan server
+php artisan serve
